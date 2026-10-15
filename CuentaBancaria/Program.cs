@@ -126,7 +126,7 @@ namespace CuentaBancaria
         {
             Console.Write("Ingrese el codigo: ");
             string codigo = Console.ReadLine();
-            Transaccion transaccion = new Transaccion();
+            Transaccion transaccion = Transacciones.Find(t => t.Codigo == codigo);
             if (transaccion != null)
             {
                 transaccion.MostrarTransaccion(codigo);
