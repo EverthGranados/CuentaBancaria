@@ -11,7 +11,7 @@ namespace CuentaBancaria
     {
         static List<Cuenta> Cuentas = new List<Cuenta>();
         static List<Transaccion> Transacciones = new List<Transaccion>();
-        static void Pedir(string msj, int x)
+        static void Pedir(string msj, ref int x)
         {
             Console.Write("\n{0}: ", msj);
             x = int.Parse(Console.ReadLine());
@@ -31,7 +31,7 @@ namespace CuentaBancaria
             int NumCuenta = 0;
             double Saldo = 0;
             string Titular = "";
-            Pedir("Ingrese el numero de cuenta ", NumCuenta);
+            Pedir("Ingrese el numero de cuenta ", ref NumCuenta);
             Pedir("Ingrese el nombre del titular de la cuenta ",ref Titular);
             Pedir("Ingrese la cantidad del depósito inicial ",ref Saldo );
 
