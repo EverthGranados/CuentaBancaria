@@ -68,18 +68,17 @@ namespace CuentaBancaria
         static void Menu()
         {
             Console.WriteLine("<<<<MENÚ>>>>");
-            Console.WriteLine("1. Agregar Cuenta ");
-            Console.WriteLine("2. Depositar a cuenta ");
-            Console.WriteLine("3. Retirar a cuenta ");
-            Console.WriteLine("4. Inactivar cuentas ");
-            Console.WriteLine("5. Transferencia entre cuentas");
-            Console.WriteLine("6. Mostrar informacion de las cuentas ");
-            Console.WriteLine("7. Mostrar informacionde una cuenta ");          
+            Console.WriteLine("1. Agregar cuenta");
+            Console.WriteLine("2. Depositar a cuenta");
+            Console.WriteLine("3. Mostrar cantidad de transacciones");
+            Console.WriteLine("4. Buscar transaccion por codigo");
+            Console.WriteLine("5. Mostrar informacion de una cuenta");
+            Console.WriteLine("0. Salir");
         }
-        
+
         static void Ejecutar()
         {
-            int op = 0;
+            int op = -1;
             do
             {
                 Menu();
@@ -94,7 +93,7 @@ namespace CuentaBancaria
                         HacerDepósito();
                         break;
                     case 3:
-                        Console.WriteLine(" cantidad de transacciones" + Transaccion.ContadorTransaccion);
+                        Console.WriteLine("Cantidad de transacciones: " + Transaccion.ContadorTransaccion);
                         break;
                     case 4:
                         MostrarTransaccionPorCodigo();
@@ -102,13 +101,14 @@ namespace CuentaBancaria
                     case 5:
                         MostrarCuentaPorCodigo();
                         break;
-                    case 6:
-
+                    case 0:
+                        Console.WriteLine("Saliendo del programa...");
+                        break;
                     default:
                         Console.WriteLine("Opcion invalida por favor seleccione una opcion válida");
                         break;
                 }
-            } while (op!=5);
+            } while (op != 0);
         }
         static void MostrarCuentaPorCodigo()
         {
